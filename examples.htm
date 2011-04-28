@@ -3,8 +3,37 @@
 	<head>
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
 		<script src="jquery.lightSwitch.js"></script>
-		<style type="text/css"></style>
+		<style type="text/css">
+      .plain .light-switch div { padding: 2px 4px; border: 1px solid black; }
+      .plain .light-switch .light-switch-divider { background: #ddd; padding: 0px; width: 10px; }
+      .plain .light-switch .text { margin: 0px; padding: 0px; text-align: center; line-height: 1; }
+      
+      .fancy .light-switch div { padding: 2px 8px; border: 1px solid black; }
+      .fancy .light-switch .light-switch-on {
+        background: -webkit-gradient(linear, left top, left bottom, from(#008dfe), to(#006dde));
+        background: -moz-linear-gradient(top,  #008dfe,  #006dde);
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#008dfe', endColorstr='#006dde');
+      }
+      .fancy .light-switch .light-switch-off {
+        background: -webkit-gradient(linear, left top, left bottom, from(#bbbbbb), to(#888888));
+        background: -moz-linear-gradient(top,  #bbbbbb,  #888888);
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='bbbbbb', endColorstr='#888888');
+      }
+      .fancy .light-switch .light-switch-divider { background: #ddd; padding: 0px; width: 10px; }
+      .fancy .light-switch .text { margin: 0px; padding: 0px; color: white; text-align: center; }
+      button { width: auto; height: auto; margin: 0px; padding: 0px; border: 0px; background: 0px; }
+    </style>
     </style>
 	</head>
+  <body>
+    <div class="plain">
+      <input class="switch1" type="checkbox">
+      <script>$(".switch1").lightSwitch(); </script>
+    </div>
+    <div class="fancy">
+    <button class="switch2"></button>
+    <input class="checkbox2" type="checkbox">
+    <script>$(".switch2").lightSwitch({ input: $('.checkbox2'), borderRadius: 3 }); </script>
+    </div>
 	</body>
 </html>
